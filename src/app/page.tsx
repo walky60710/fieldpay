@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { products } from "@/content/products";
+import { framerImage, products } from "@/content/products";
 import { testimonials } from "@/content/testimonials";
 import { faq } from "@/content/faq";
 import { Button } from "@/components/Button";
@@ -11,9 +11,9 @@ import { RevealObserver } from "@/components/Reveal";
 import styles from "./home.module.css";
 
 const steps = [
-  { title: "See an assignment.", body: "Open the app and take an assignment that is already approved for you." },
-  { title: "Finish the work.", body: "Complete the steps on the assignment. Its status moves from pending to approved." },
-  { title: "See the payout.", body: "The amount for that assignment shows on the same screen. No separate earnings page." },
+  { title: "See an assignment.", body: "Open the app and take an assignment that is already approved for you.", image: "Bs6elk7F7ufkFJkFmscLBQTAc.jpg", alt: "Person holding a smartphone" },
+  { title: "Finish the work.", body: "Complete the steps on the assignment. Its status moves from pending to approved.", image: "6Rqg5HewjOjoO8zBrcDUhzfGrAI.jpg", alt: "Person using a laptop" },
+  { title: "See the payout.", body: "The amount for that assignment shows on the same screen. No separate earnings page.", image: "lpJM1QCwAOEWznvcVQwsA40LMw.jpg", alt: "A glass jar of coins with a small plant" },
 ];
 
 export default function Home() {
@@ -64,7 +64,8 @@ export default function Home() {
           <ol className={styles.steps}>
             {steps.map((s, i) => (
               <li key={s.title} className={styles.step} data-reveal style={{ "--reveal-delay": `${i * 60}ms` } as React.CSSProperties}>
-                <span className={`${styles.stepNum} tabular`}>{i + 1}</span>
+                {/* eslint-disable-next-line @next/next/no-img-element -- served and resized by Framer's image CDN */}
+                <img className={styles.stepImage} src={framerImage(s.image, 1024)} srcSet={`${framerImage(s.image, 512)} 512w, ${framerImage(s.image, 1024)} 1024w`} sizes="(max-width: 1199px) 100vw, 33vw" alt={s.alt} loading="lazy" width={1200} height={800} />
                 <h3 className="heading-h3">{s.title}</h3>
                 <p className="text-body">{s.body}</p>
               </li>
@@ -85,7 +86,10 @@ export default function Home() {
             {products.map((p, i) => (
               <li key={p.slug} data-reveal style={{ "--reveal-delay": `${(i % 2) * 60}ms` } as React.CSSProperties}>
                 <Link href={`/products/${p.slug}`} className={styles.productCard}>
-                  <div className={styles.cover}><div className={styles.coverPhone}><Phone screen={p.screen} /></div></div>
+                  <div className={styles.cover}>
+                    {/* eslint-disable-next-line @next/next/no-img-element -- served and resized by Framer's image CDN */}
+                    <img src={framerImage(p.cover, 1024)} srcSet={`${framerImage(p.cover, 512)} 512w, ${framerImage(p.cover, 1024)} 1024w, ${framerImage(p.cover)} 1100w`} sizes="(max-width: 809px) 100vw, 50vw" alt="" loading="lazy" width={1100} height={815} />
+                  </div>
                   <div className={styles.productText}>
                     <p className={styles.productName}>
                       <span className="heading-h3">{p.name}</span>

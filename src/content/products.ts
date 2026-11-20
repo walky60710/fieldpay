@@ -12,6 +12,7 @@ export type Product = {
   icon: "Briefcase" | "Store" | "GraduationCap" | "ChartPie";
   audience: string;
   screen: PhoneScreen;
+  cover: string; // Framer image id, served from framerusercontent.com
   tagline: string;
   summary: string;
   menuBlurb: string;
@@ -26,6 +27,7 @@ export type Product = {
 export const products: Product[] = [
   {
     slug: "fieldpay-partners",
+    cover: "jWPPjapIf4HySeNfRJwsgsKlIRw.jpg",
     name: "Fieldpay Partners",
     short: "Partners",
     status: "live",
@@ -53,6 +55,7 @@ export const products: Product[] = [
   },
   {
     slug: "fieldpay-checkout",
+    cover: "tO9n4rMnnqMQun54SIHYV5iPfzE.jpg",
     name: "Fieldpay Checkout",
     short: "Checkout",
     status: "soon",
@@ -76,6 +79,7 @@ export const products: Product[] = [
   },
   {
     slug: "fieldpay-campus",
+    cover: "beCgJ7AeyXgiqoYtSyTCYZPPMNI.jpg",
     name: "Fieldpay Campus",
     short: "Campus",
     status: "soon",
@@ -103,6 +107,7 @@ export const products: Product[] = [
   },
   {
     slug: "fieldpay-invest",
+    cover: "QeldFx0d27FfpRZzSQqPaCU0Pc.jpg",
     name: "Fieldpay Invest",
     short: "Invest",
     status: "soon",
@@ -129,5 +134,9 @@ export const products: Product[] = [
     ],
   },
 ];
+
+// Image from the Framer file at a given width (512, 1024 or 2048).
+export const framerImage = (id: string, width?: 512 | 1024 | 2048) =>
+  `https://framerusercontent.com/images/${id}${width ? `?scale-down-to=${width}` : ""}`;
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
