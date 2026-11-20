@@ -1,0 +1,152 @@
+/*
+  Fieldpay design tokens.
+  Names match the colour and text styles in the Framer file,
+  so a designer and a developer can talk about the same thing:
+  Framer "Accent/Primary" = CSS var(--accent-primary).
+*/
+
+:root {
+  /* Colour: text */
+  --text-primary: #1f1b17;
+  --text-secondary: #6b6966;
+  --text-tertiary: #767370;
+  --text-inverse: #ffffff;
+  --text-inverse-muted: rgba(255, 255, 255, 0.64);
+
+  /* Colour: accent */
+  --accent-primary: #0255e3;
+  --accent-hover: #0146bd;
+  --accent-deep: #10285a;
+  --accent-soft: #dce7fc;
+
+  /* Colour: surfaces and lines */
+  --surface-page: #ffffff;
+  --surface-subtle: #f6f6f6;
+  --border-default: #e6e5e3;
+  --overlay-hero: rgba(255, 255, 255, 0.92);
+  --overlay-clear: rgba(255, 255, 255, 0);
+
+  /* Colour: product mockups and status */
+  --device-frame: #121316;
+  --device-screen-dark: #0e1116;
+  --status-positive: #15803d;
+  --status-positive-soft: #dcfce7;
+
+  /* Type families */
+  --font-display: "Inter Variable", system-ui, sans-serif;
+  --font-text: "Inter Variable", system-ui, sans-serif;
+
+  /* Spacing scale (4 px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Radius scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+
+  /* Layout: matches the Framer breakpoints */
+  --page-padding: 40px; /* Desktop 1200–1439 */
+  --section-padding: 96px;
+  --content-max: 1200px;
+
+  /* Motion: one curve for the whole site */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-base: 300ms;
+}
+
+@media (min-width: 1440px) {
+  :root { --page-padding: 150px; }
+}
+@media (max-width: 1199.98px) {
+  :root { --page-padding: 32px; --section-padding: 80px; }
+}
+@media (max-width: 809.98px) {
+  :root { --page-padding: 20px; --section-padding: 64px; }
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+h1, h2, h3, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/*
+  Text styles: one class per Framer text style.
+  Framer "Heading/H1" = class "heading-h1".
+*/
+.heading-h1 { font-family: var(--font-display); font-weight: 400; font-size: 56px; line-height: 1.05; letter-spacing: -0.045em; color: var(--text-primary); text-wrap: balance; }
+.heading-h2 { font-family: var(--font-display); font-weight: 400; font-size: 48px; line-height: 1.05; letter-spacing: -0.04em; color: var(--text-primary); text-wrap: balance; }
+.heading-h2-small { font-family: var(--font-display); font-weight: 500; font-size: 24px; line-height: 1.25; letter-spacing: -0.02em; color: var(--text-primary); }
+.heading-h3 { font-family: var(--font-display); font-weight: 500; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; color: var(--text-primary); }
+.text-quote { font-family: var(--font-display); font-weight: 400; font-size: 24px; line-height: 1.35; letter-spacing: -0.02em; color: var(--text-primary); }
+.text-lead { font-family: var(--font-display); font-weight: 400; font-size: 19px; line-height: 1.5; letter-spacing: -0.01em; color: var(--text-secondary); text-wrap: pretty; }
+.text-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); text-wrap: pretty; }
+.text-small { font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
+.text-caption { font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+.text-eyebrow { font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
+.ui-button { font-size: 15px; font-weight: 500; line-height: 1.2; }
+.ui-logo { font-family: var(--font-display); font-size: 22px; font-weight: 500; line-height: 1; letter-spacing: -0.02em; color: var(--text-primary); }
+.tabular { font-variant-numeric: tabular-nums; }
+
+@media (max-width: 1199.98px) {
+  .heading-h1 { font-size: 48px; }
+  .heading-h2 { font-size: 40px; }
+}
+@media (max-width: 809.98px) {
+  .heading-h1 { font-size: 38px; }
+  .heading-h2 { font-size: 32px; }
+  .heading-h3 { font-size: 22px; }
+  .text-quote { font-size: 20px; }
+  .text-lead { font-size: 17px; }
+}
+
+/* Link styles: Framer "Link/Inline" */
+.link-inline { color: var(--accent-primary); text-decoration: underline; text-underline-offset: 3px; transition: color var(--duration-fast) var(--ease); }
+.link-inline:hover { color: var(--accent-hover); }
+
+/* Layout helpers */
+.section { padding: var(--section-padding) var(--page-padding); }
+.container { width: 100%; max-width: var(--content-max); margin: 0 auto; }
+.section-header { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); text-align: center; max-width: 720px; margin: 0 auto; }
+.section-header.left { align-items: flex-start; text-align: left; margin: 0; max-width: 960px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Scroll reveal (see components/Reveal.tsx). Content stays visible without JavaScript. */
+.js [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity var(--duration-base) var(--ease), transform var(--duration-base) var(--ease); transition-delay: var(--reveal-delay, 0ms); }
+.js [data-reveal].is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
