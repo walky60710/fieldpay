@@ -1,0 +1,57 @@
+.frame {
+  width: 300px;
+  aspect-ratio: 300 / 620;
+  padding: 10px;
+  border-radius: 48px;
+  background: var(--device-frame);
+  box-shadow: 0 2px 4px rgba(18, 19, 22, 0.08), 0 24px 48px -12px rgba(18, 19, 22, 0.28);
+  flex-shrink: 0;
+}
+.screen {
+  height: 100%;
+  border-radius: 38px;
+  background: var(--surface-page);
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+.dark { background: var(--device-screen-dark); color: var(--text-inverse); }
+.status { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px 6px; font-size: 12px; font-weight: 600; }
+.notch { width: 84px; height: 24px; border-radius: 99px; background: var(--device-frame); }
+.signal { width: 36px; height: 10px; border-radius: 3px; background: currentColor; opacity: 0.8; }
+.body { display: flex; flex-direction: column; gap: 8px; padding: 12px 18px; }
+.center { align-items: center; text-align: center; padding-top: 32px; }
+.appbar { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.avatar { width: 28px; height: 28px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-primary); display: grid; place-items: center; font-size: 11px; font-weight: 600; }
+.title { font-size: 13px; font-weight: 500; }
+.push { margin-left: auto; }
+.label { font-size: 11px; line-height: 1.4; color: var(--text-secondary); }
+.dark .label { color: var(--text-inverse-muted); }
+.figure { font-family: var(--font-display); font-size: 32px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
+.cents { opacity: 0.45; }
+.change { font-size: 11px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+.dark .change { color: var(--text-inverse-muted); }
+.pill { padding: 2px 6px; border-radius: 99px; background: var(--status-positive-soft); color: var(--status-positive); font-weight: 500; }
+.chart { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin: 14px 0 6px; }
+.barCol { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; font-size: 10px; color: var(--text-secondary); }
+.bar { width: 100%; border-radius: 4px; background: var(--accent-soft); }
+.barOn { background: var(--accent-primary); }
+.item { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 12px; background: var(--surface-subtle); }
+.dark .item { background: transparent; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 10px 0; }
+.itemTitle { font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.tag { font-size: 10px; padding: 1px 6px; border-radius: 99px; background: var(--surface-page); color: var(--text-secondary); }
+.ok { background: var(--status-positive-soft); color: var(--status-positive); }
+.checkIcon { width: 52px; height: 52px; border-radius: 99px; background: var(--status-positive-soft); color: var(--status-positive); display: grid; place-items: center; margin-bottom: 6px; }
+.rows { width: 100%; margin: 18px 0 0; display: flex; flex-direction: column; }
+.rows div { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-default); font-size: 12px; }
+.rows dt { color: var(--text-secondary); }
+.rows dd { margin: 0; font-weight: 500; }
+.done { margin-top: 24px; width: 100%; padding: 12px; border-radius: 12px; background: var(--accent-primary); color: var(--text-inverse); font-weight: 500; }
+.card { padding: 16px; border-radius: 16px; background: var(--accent-deep); color: var(--text-inverse); display: flex; flex-direction: column; gap: 2px; margin-bottom: 12px; }
+.cardTitle { font-weight: 500; }
+.cardSub { font-size: 11px; color: var(--text-inverse-muted); }
+.cardNum { margin: 18px 0 2px; letter-spacing: 0.08em; font-size: 13px; }
+.split { display: flex; gap: 3px; height: 6px; margin: 16px 0 8px; }
+.split span { border-radius: 99px; }
+.dot { width: 7px; height: 7px; border-radius: 99px; display: inline-block; }

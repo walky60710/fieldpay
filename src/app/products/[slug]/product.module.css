@@ -1,0 +1,25 @@
+.top { padding-bottom: 0; }
+.header { display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-12); align-items: end; }
+.headText { display: flex; flex-direction: column; gap: var(--space-5); padding-bottom: var(--space-16); }
+.kicker { display: flex; align-items: center; gap: var(--space-2); }
+.icon { width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--accent-soft); color: var(--accent-primary); display: grid; place-items: center; }
+.soon { font-size: 13px; padding: 2px 10px; border-radius: var(--radius-full); background: var(--surface-subtle); color: var(--text-secondary); }
+.cta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); margin-top: var(--space-2); }
+.visual { position: relative; height: 480px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; background: var(--surface-subtle); overflow: hidden; }
+.visualPhone { position: absolute; left: 50%; top: 48px; translate: -50% 0; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-10); }
+.step { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-5); border-top: 1px solid var(--border-default); }
+.num { font-family: var(--font-display); font-size: 32px; line-height: 1; color: var(--accent-primary); margin-bottom: var(--space-2); }
+.fees { display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-12); align-items: start; }
+.feesText { display: flex; flex-direction: column; gap: var(--space-4); }
+.note { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-8); border-radius: var(--radius-xl); background: var(--surface-subtle); }
+.faq { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-16); align-items: start; }
+@media (max-width: 1199.98px) {
+  .header, .fees, .faq { grid-template-columns: 1fr; gap: var(--space-10); }
+  .headText { padding-bottom: 0; }
+  .steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 809.98px) {
+  .visual { height: 400px; }
+  .note { padding: var(--space-6); }
+}
