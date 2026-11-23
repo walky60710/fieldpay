@@ -12,4 +12,6 @@
 .primary:hover { background: var(--accent-hover); }
 .secondary { background: var(--surface-page); color: var(--text-primary); border: 1px solid var(--border-default); }
 .secondary:hover { background: var(--surface-subtle); }
+.ghost { background: transparent; color: var(--accent-primary); }
+.ghost:hover { background: var(--accent-soft); }
 .button:active { transform: scale(0.98); }
